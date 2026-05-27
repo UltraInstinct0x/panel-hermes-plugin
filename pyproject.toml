@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "panel-hermes-plugin"
+version = "0.1.0"
+description = "Forward Hermes traces to panel ingest with sampling, novelty, and error-always-on."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "UltraInstinct0x" }]
+license = { text = "MIT" }
+dependencies = [
+  "panel-sdk>=0.2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0,<9",
+  "pytest-asyncio>=0.23.0,<1",
+  "ruff>=0.6.0,<1",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

@@ -1,0 +1,15 @@
+name: panel-hermes-plugin
+version: "0.1.0"
+description: "Forward Hermes Agent traces (conversations, LLM calls, tool calls) to a panel ingest endpoint for human-judged feedback. Sampling + novelty + error always-on, async, circuit-breakered, scrubber-attested."
+author: UltraInstinct0x
+requires_env:
+  - PANEL_BASE_URL
+  - PANEL_SITE_KEY
+  - PANEL_SITE_SECRET
+hooks:
+  - pre_api_request
+  - post_api_request
+  - pre_llm_call
+  - post_llm_call
+  - pre_tool_call
+  - post_tool_call
