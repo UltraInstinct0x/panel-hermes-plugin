@@ -47,3 +47,8 @@ pytest
 ruff check .
 ruff format --check .
 ```
+
+## Development note
+
+If `panel-sdk>=0.2.0` is unavailable from your package index, install from a local
+checkout before running tests.
